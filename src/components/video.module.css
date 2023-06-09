@@ -1,0 +1,18 @@
+.videoContainer {
+    position: relative;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 56.25%; /* Tỷ lệ màn hình 16:9, bạn có thể điều chỉnh nếu cần thiết */
+    
+  }
+  .video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+  }
+  
