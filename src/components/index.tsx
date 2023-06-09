@@ -9,9 +9,8 @@ export default function HomePage(props: IHomeProps) {
     <div className={style.videoContainer}>
       <video
         className={style.video}
-        // controls
         autoPlay
-        muted
+        // muted
         loop
         src={"assets/videos/video2.mp4"}
       />

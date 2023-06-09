@@ -3,11 +3,21 @@ import * as React from "react";
 import AudioMusic from "./audio";
 import InputRange from "../input-range";
 import ButtonCustom from "../button-custom";
-import { BackBtn, NextBtn, PauseBtn, PlayBtn } from "../icons-svg";
+import {
+  BackBtn,
+  FullScreen,
+  ListMusicBtn,
+  NextBtn,
+  PauseBtn,
+  PlayBtn,
+  SmallScreen,
+} from "../icons-svg";
+import LayoutComp from "../layout-component";
+import FullSmallGreen from "../full-screen";
 
 export interface IButtonActionProps {}
 
-export default function ButtonAction(props: IButtonActionProps) {
+const ButtonAction = React.memo((props: IButtonActionProps) => {
   const audioRef = React.useRef<HTMLAudioElement>(null);
   const [isPlaying, setIsPlaying] = React.useState(false);
   const [volume, setVolume] = React.useState(1);
@@ -33,23 +43,36 @@ export default function ButtonAction(props: IButtonActionProps) {
     },
     []
   );
+  const handleHover = () => {
+    console.log("hover");
+  };
   return (
     <>
       <AudioMusic audioRef={audioRef} />
-      <div className="flex space-x-4 px-2 bg-black opacity-60 rounded-lg ">
-        <ButtonCustom className={'text-white'}>
+
+      <LayoutComp className="px-2">
+        <ButtonCustom className={"text-white px-2 hover:opacity-90 opacity-70 "}>
           <BackBtn />
         </ButtonCustom>
-        <ButtonCustom className={'text-white'} onClick={togglePlay}> 
+        <ButtonCustom className={"text-white px-2 hover:opacity-90 opacity-70 "} onClick={togglePlay}>
           {!isPlaying ? <PauseBtn /> : <PlayBtn />}
-            </ButtonCustom>
-        <ButtonCustom className={'text-white'}>
+        </ButtonCustom>
+        <ButtonCustom className={"text-white px-2 hover:opacity-90 opacity-70 "}>
           <NextBtn />
         </ButtonCustom>
-      </div>
-      <div className="flex h-10 px-2 bg-black opacity-50 rounded-lg ">
+      </LayoutComp>
+      <LayoutComp className="px-2 hover:opacity-90 opacity-70 ">
         <InputRange handleVolumeChange={handleVolumeChange} volume={volume} />
-      </div>
+      </LayoutComp>
+
+      <LayoutComp className="px-2 hover:opacity-90 opacity-70 " >
+        <ButtonCustom className={"text-white"}>
+          <ListMusicBtn />
+        </ButtonCustom>
+      </LayoutComp>
+      <FullSmallGreen/>
     </>
   );
-}
+});
+ButtonAction.displayName = "ButtonAction";
+export default ButtonAction;

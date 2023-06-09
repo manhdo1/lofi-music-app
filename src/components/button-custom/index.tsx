@@ -1,8 +1,13 @@
 import React from 'react'
+import LayoutComp from '../layout-component';
 
-type Props = {}
+type Props = {
+  children: React.ReactNode,
+  onClick?:any,
+  className?:string
+}
 
-const ButtonCustom = ({children,onClick,className,...passProps}:any) => {
+const ButtonCustom = ({children,onClick,className,...passProps}:Props) => {
   const props = {
     onClick,
     ...passProps,

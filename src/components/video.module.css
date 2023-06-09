@@ -3,7 +3,7 @@
     width: 100%;
     height: 0;
     overflow: hidden;
-    padding-bottom: 56.25%; /* Tỷ lệ màn hình 16:9, bạn có thể điều chỉnh nếu cần thiết */
+    padding-bottom: 56.25%; /* Tỷ lệ màn hình 16:9 */
     
   }
   .video {

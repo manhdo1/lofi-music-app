@@ -4,7 +4,7 @@ export interface IInputRangeProps {}
 
 const InputRange = React.memo(({handleVolumeChange,volume}:any) => {
   return (
-    <label className="slider">
+    <label className="slider opacity-70 hover:opacity-90">
       <input type="range" className="level" 
         min="0"
         max="1"
