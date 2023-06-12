@@ -4,14 +4,13 @@ type Props = {
     listTodo?: any
 }
 
-const ListTodo = ({listTodo}: any) => {
+const ListTodo = ({listTodo = []}: any) => {
   // const [listTodo1, setListTodo1] = useState(listTodo);
-    console.log("con" , listTodo);
-    const array = listTodo
+    console.log("con" , typeof listTodo);
   return (
     <>
     <div id="checklist">
-                {listTodo && array.map((item:any) => {
+                {listTodo && listTodo.map((item:any) => {
                   return (
                     <Fragment key={item.key}>
                       <input

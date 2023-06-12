@@ -8,50 +8,13 @@ import MyTooltip from "../tooltip";
 import AddTodo from "./addTodo";
 import ListTodo from "./listTodo";
 type Props = {};
-
-// {
-//   key: "1",
-//   for: "01",
-//   label: "Điều thứ nhất",
-// },
-// {
-//   key: "2",
-//   for: "02",
-//   label: "Điều thứ nhất",
-// },
-// {
-//   key: "3",
-//   for: "03",
-//   label: "Điều thứ nhất",
-// },
-
+interface Item {
+  key: string,
+  for: string,
+  label: string,
+}
 const DraggableTodo = (props: Props) => {
-  const [valueInput, setvalueInput] = useState<any>();
-  let count = 1;
-  // const handleValueChange = (value: any) => {
-  //   console.log("ád");
-  //   if (value === "") {
-  //     return;
-  //   }
-  //   const newItem = {
-  //     key: String(count),
-  //     for: String(count).padStart(2, "0"),
-  //     label: value,
-  //   };
-  //   count++;
-  //   Todolist.push(newItem);
-  // };
-  const handleAdd = () => {
-    console.log(valueInput);
-    const test = [{key:1,for:'01',label:valueInput}]
-    setvalueInput([...test])
-  };
-
-  const handleChange = (e: any) => {
-    setvalueInput(e.target.value)
-  };
-  console.log(valueInput);
-  
+  const [valueInput, setvalueInput] = useState<Item[]>([]);
   return (
     <>
       <Draggable defaultPosition={{ x: 150, y: 0 }}>
@@ -64,25 +27,10 @@ const DraggableTodo = (props: Props) => {
               TODO LIST
             </h1>
             <div className="todo-list  max-h-96 overflow-auto m-2 ">
-              <ListTodo listTodo={valueInput} />
+              <ListTodo  listTodo={valueInput} />
             </div>
-
             <div className="action border-t-2 flex justify-between">
-              <div className="input-wrapper mt-2">
-                <button
-                  className="icon hover:opacity-50"
-                  onClick={handleAdd}
-                >
-                  <Plus />
-                </button>
-                <input
-                  onChange={handleChange}
-                  placeholder="Thêm mới.."
-                  className="input"
-                  name="text"
-                  type="text"
-                />
-              </div>
+              <AddTodo valueInput={valueInput} setvalueInput= {setvalueInput}/>
               <MyTooltip text="Xóa">
                 <ButtonCustom className="px-2 m-1 hover:opacity-50 mt-2">
                   <Remove />
