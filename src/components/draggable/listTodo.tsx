@@ -1,8 +1,6 @@
 import React, { Fragment, useState } from "react";
 
-type Props = {
-  listTodo?: any;
-};
+
 
 const ListTodo = ({ listTodo = [], setvalueInput }: any) => {
   const handleCheckboxChange = (itemId: any) => {
@@ -12,7 +10,6 @@ const ListTodo = ({ listTodo = [], setvalueInput }: any) => {
       )
     );
   };
-
   return (
     <>
       <div id="checklist">

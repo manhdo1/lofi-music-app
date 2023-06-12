@@ -22,19 +22,19 @@ const DraggableTodo = (props: Props) => {
   };
   return (
     <>
-      <Draggable defaultPosition={{ x: 150, y: 0 }}>
+      <Draggable defaultPosition={{ x: 150, y: 0 }} >
         <div className="transparent-background  rounded-lg w-96 ">
           <div className="content">
             {/* <div>
                 <Lock/>
             </div> */}
-            <h1 className=" title-color font-extrabold border-b-2 text-center  text-black">
+            <h1 className=" title-color font-extrabold border-b-2 text-center text-black">
               TODO LIST
             </h1>
-            <div className="todo-list  max-h-96 overflow-auto m-2 ">
+            <div className="todo-list max-h-96 overflow-auto m-2 ">
               <ListTodo
                 setIsChecked={setIsChecked}
-                setvalueInput={setvalueInput}
+                setvalueInput={setvalueInput} 
                 isChecked={isChecked}
                 listTodo={valueInput}
               />
