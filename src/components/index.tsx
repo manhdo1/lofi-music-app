@@ -1,6 +1,8 @@
+'use client'
 import * as React from "react";
 import style from "./video.module.css";
 import Navbar from "./navbar";
+import DraggableTodo from "./draggable";
 export interface IHomeProps {}
 
 export default function HomePage(props: IHomeProps) {
@@ -10,11 +12,12 @@ export default function HomePage(props: IHomeProps) {
       <video
         className={style.video}
         autoPlay
-        // muted
+        muted
         loop
         src={"assets/videos/video2.mp4"}
       />
-     <Navbar/> 
+     <Navbar/>
+     <DraggableTodo/>
     </div>
   );
 }
