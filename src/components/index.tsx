@@ -1,6 +1,7 @@
 import * as React from "react";
 import style from "./video.module.css";
 import Navbar from "./navbar";
+import Lock from "./lock";
 export interface IHomeProps {}
 
 export default function HomePage(props: IHomeProps) {
@@ -10,11 +11,12 @@ export default function HomePage(props: IHomeProps) {
       <video
         className={style.video}
         autoPlay
-        // muted
+        muted
         loop
         src={"assets/videos/video2.mp4"}
       />
      <Navbar/> 
+     <Lock/>
     </div>
   );
 }

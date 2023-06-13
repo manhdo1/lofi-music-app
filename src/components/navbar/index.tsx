@@ -21,7 +21,7 @@ const  Navbar = (props: INavbarProps) => {
             <div className="flex flex-1 items-center justify-end ">
               <div className="flex space-x-4 items-center ">
                 {/* Đồng hồ */}
-                <Lock/>
+                {/* <Lock/> */}
                 {/* -------- */}
                 <ButtonAction />
                 {/* ------------- */}
