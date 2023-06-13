@@ -2,10 +2,9 @@ import React, { memo, useState } from "react";
 import { Plus } from "../icons-svg";
 import "./styleAddTodo.css";
 
-type Props = {};
 
 const AddTodo = memo(({ setvalueInput, valueInput }: any) => {
-  const [value, setvalue] = useState<any>();
+  const [value, setvalue] = useState<string>('');
   const [count, setCount] = useState<number>(1);
   const handleAdd = () => {
     if (value === undefined || value ==='' ) {
