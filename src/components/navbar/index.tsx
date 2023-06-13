@@ -5,6 +5,7 @@ import ShowHideButton from "../showHide";
 import ButtonCustom from "../button-custom";
 import LayoutComp from "../layout-component";
 import Lock from "../lock";
+import DraggableComp from "../draggable";
 export interface INavbarProps {}
 
 const  Navbar = (props: INavbarProps) => {
