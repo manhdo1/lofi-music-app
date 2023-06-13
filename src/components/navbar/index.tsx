@@ -21,11 +21,7 @@ const  Navbar = (props: INavbarProps) => {
           <div className="relative flex h-24 items-center justify-between">
             <div className="flex flex-1 items-center justify-end ">
               <div className="flex space-x-4 items-center ">
-                {/* Đồng hồ */}
-                {/* <Lock/> */}
-                {/* -------- */}
                 <ButtonAction />
-                {/* ------------- */}
                 <LayoutComp className="px-2 hover:opacity-90 opacity-70 ">
                   <ButtonCustom className={"text-white"} onClick={handleShow}>
                     <ShowHideButton isShow={isShow}/>

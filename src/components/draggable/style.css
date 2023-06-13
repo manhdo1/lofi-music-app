@@ -13,8 +13,9 @@
   word-wrap: break-word;
 }
 .title-color{
-  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
-               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+  color: #fff;
+  text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444,
+    0 0 0.1em #ff4444, 0 5px 3px #000;
 }
 /* ------------------------------- */
   #checklist {

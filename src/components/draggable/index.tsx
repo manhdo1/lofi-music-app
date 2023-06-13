@@ -7,6 +7,7 @@ import { Remove } from "../icons-svg";
 import MyTooltip from "../tooltip";
 import AddTodo from "./addTodo";
 import ListTodo from "./listTodo";
+import DragCustom from "../dragableCustom";
 type Props = {};
 interface Item {
   key: string;
@@ -20,15 +21,11 @@ const DraggableTodo = (props: Props) => {
   const handleRemoveTodo = () => {
     setvalueInput((prevItems) => prevItems.filter((item) => !item.isCheck));
   };
+  const pos = { x: 150, y:  0 }
   return (
     <>
-      <Draggable defaultPosition={{ x: 150, y: 0 }} >
-        <div className="transparent-background  rounded-lg w-96 ">
-          <div className="content">
-            {/* <div>
-                <Lock/>
-            </div> */}
-            <h1 className=" title-color font-extrabold border-b-2 text-center text-black">
+        <DragCustom defaultPosition={pos} className="w-96">
+            <h1 className=" title-color font-extrabold border-b-2 text-center ">
               TODO LIST
             </h1>
             <div className="todo-list max-h-96 overflow-auto m-2 ">
@@ -52,9 +49,7 @@ const DraggableTodo = (props: Props) => {
                 </MyTooltip>
               ) : null}
             </div>
-          </div>
-        </div>
-      </Draggable>
+      </DragCustom>
     </>
   );
 };

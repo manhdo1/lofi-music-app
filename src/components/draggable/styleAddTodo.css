@@ -46,6 +46,7 @@
     pointer-events: painted;
     background-color: transparent;
     transition: .2s linear;
+    
   }
   
   .icon:focus ~ .input,

@@ -1,39 +1,49 @@
-'use client'
-import React, { useEffect, useState } from 'react'
-import LayoutComp from '../layout-component';
-import './style.css'
-type Props = {}
-
-const Lock = (props: Props) => {
-  const [currentTime, setCurrentTime] = useState<Date | null>(null);
+"use client";
+import React, { useEffect, useState } from "react";
+import "./style.css";
+import DragCustom from "../dragableCustom";
+import { date, day, months, year,hours as hours1,minutes as minute1 } from "./date";
+const Lock = () => {
+  const [hours, sethours] = useState<number | null>(null);
+  const [minute, setMinute] = useState<string | null>(null);
+  const [amPm, setamPm] = useState<string | null>(null);
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentTime(new Date());
+      getFormattedTime();
     }, 1000);
-
     return () => {
       clearInterval(interval);
     };
   }, []);
+ 
   const getFormattedTime = () => {
-    if (!currentTime) {
-      return 'Load...';
-    }
-    const hours = currentTime.getHours();
-    const minutes = currentTime.getMinutes();
-    const amPm = hours >= 12 ? 'PM' : 'AM';
-    const formattedHours = hours > 12 ? hours - 12 : hours 
-    const formattedMinutes = minutes.toString().padStart(2, '0');
-    return `${formattedHours}:${formattedMinutes} ${amPm}`;
-   
+    const amPm = hours1 >= 12 ? "PM" : "AM";
+    const formattedHours = hours1 > 12 ? hours1 - 12 : hours;
+    const formattedMinutes = minute1.toString().padStart(2, "0");
+    sethours(formattedHours);
+    setMinute(formattedMinutes);
+    setamPm(amPm);
   };
+  const pos = { x: 1000, y: 0 };
   return (
     <>
-      <LayoutComp className='px-2 items-center' >
-        <div className='text-white font-extrabold font-clock' >{getFormattedTime()}</div>
-      </LayoutComp>
+      <DragCustom defaultPosition={pos}>
+        <div className="text-white logo">
+          {hours ? (
+            <b>
+              <span>{hours}</span>:<span>{minute} </span>
+              <p className="inline text-4xl">{amPm}</p>
+            </b>
+          ) : (
+            "Load..."
+          )}
+        </div>
+        <div className="text-white date text-4xl ">
+          {day},{date} {months} {year}
+        </div>
+      </DragCustom>
     </>
-  )
-}
+  );
+};
 
-export default Lock
+export default Lock;

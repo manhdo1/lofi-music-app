@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import * as React from "react";
 import style from "./video.module.css";
 import Navbar from "./navbar";
@@ -7,7 +7,6 @@ import DraggableTodo from "./draggable";
 export interface IHomeProps {}
 
 export default function HomePage(props: IHomeProps) {
-  
   return (
     <div className={style.videoContainer}>
       <video
@@ -17,9 +16,13 @@ export default function HomePage(props: IHomeProps) {
         loop
         src={"assets/videos/video2.mp4"}
       />
-     <Navbar/> 
-     <Lock/>
-     <DraggableTodo/>
+      <Navbar />
+      <div className="relative">
+        <div className="absolute">
+          <Lock />
+        </div>
+        <DraggableTodo />
+      </div>
     </div>
   );
 }

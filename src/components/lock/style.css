@@ -1,4 +1,59 @@
-
-.font-clock{
-    font-family: "ＭＳ Ｐゴシック";
+.font-clock {
+  font-family: "ＭＳ Ｐゴシック";
+  font-size: 5rem;
 }
+/* .title-color{
+    text-shadow: 2px 0 #ddc2c2, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+                 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+  } */
+.date{
+    font: 400 4vh "Vibur";
+    color: #fee;
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444,
+      0 0 0.1em #ff4444, 0 5px 3px #000;
+}
+.logo {
+  font: 400 10vh "Vibur";
+  color: #fee;
+  text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444,
+    0 0 0.1em #ff4444, 0 5px 3px #000;
+}
+  .logo b span{
+    animation: blink linear infinite 5s;
+  }
+  .logo b span:nth-of-type(2){
+    animation: blink linear infinite 7s;
+  }
+  @keyframes blink {
+    80% {
+      color: inherit;
+      text-shadow: inherit;
+    }
+    81%{
+       color: #333;
+    }
+    82% {
+      
+      text-shadow: none;
+    }
+    83% {
+      color: inherit;
+      text-shadow: inherit;
+    }
+    84% {
+      color: #333;
+      text-shadow: none;
+    }
+    85% {
+      color: inherit;
+      text-shadow: inherit;
+    }
+    87% {
+      color: #333;
+      text-shadow: none;
+    }
+    90.5% {
+      color: inherit;
+      text-shadow: inherit;
+    }
+  }
