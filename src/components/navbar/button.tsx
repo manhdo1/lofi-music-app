@@ -12,7 +12,8 @@ import {
 } from "../icons-svg";
 import LayoutComp from "../layout-component";
 import FullSmallGreen from "../full-screen";
-import { audioArray } from "@/constants/audio";
+import ListScreen from "../list-screen";
+import { audioArray } from "../../constants/constant";
 
 export interface IButtonActionProps {}
 
@@ -69,7 +70,7 @@ const ButtonAction = React.memo((props: IButtonActionProps) => {
     <>
       <AudioMusic audioRef={audioRef} prev={currentTrackIndex} />
 
-      <LayoutComp className="px-2">
+      <LayoutComp className="px-2 opacity-70">
         <ButtonCustom onClick={handlePrev} className={"text-white px-2 hover:opacity-90 opacity-70 "}>
           <BackBtn />
         </ButtonCustom>
@@ -84,9 +85,8 @@ const ButtonAction = React.memo((props: IButtonActionProps) => {
         <InputRange handleVolumeChange={handleVolumeChange} volume={volume} />
       </LayoutComp>
       <LayoutComp className="px-2 hover:opacity-90 opacity-70 " >
-        <ButtonCustom className={"text-white"}>
-          <ListMusicBtn />
-        </ButtonCustom>
+        
+        <ListScreen/>
       </LayoutComp>
       <FullSmallGreen/>
     </>

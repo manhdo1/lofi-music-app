@@ -4,7 +4,7 @@ import LayoutComp from '../layout-component';
 type Props = {
   children: React.ReactNode,
   onClick?:any,
-  className?:string
+  className?:string,
 }
 
 const ButtonCustom = ({children,onClick,className,...passProps}:Props) => {

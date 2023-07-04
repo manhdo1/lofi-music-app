@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { cloud } from '@/apis';
-import { audioArray } from '@/constants/audio';
+import { audioArray } from '@/constants/constant';
 export interface IAudioProps {
 }
   
