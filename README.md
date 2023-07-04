@@ -23,5 +23,6 @@ Link deloy vercel [`bấm vào đây`](https://lofi-app-iota.vercel.app/) để 
 - chế độ toàn màn hình
 - tăng/giảm âm lượng
 - hiện thị thời gian,ngày/tháng/năm hiện tại (có thể kéo thả)
+- prev/next track
 
 
