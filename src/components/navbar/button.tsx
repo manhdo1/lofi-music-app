@@ -5,21 +5,21 @@ import InputRange from "../input-range";
 import ButtonCustom from "../button-custom";
 import {
   BackBtn,
-  FullScreen,
   ListMusicBtn,
   NextBtn,
   PauseBtn,
   PlayBtn,
-  SmallScreen,
 } from "../icons-svg";
 import LayoutComp from "../layout-component";
 import FullSmallGreen from "../full-screen";
+import { audioArray } from "@/constants/audio";
 
 export interface IButtonActionProps {}
 
 const ButtonAction = React.memo((props: IButtonActionProps) => {
   const audioRef = React.useRef<HTMLAudioElement>(null);
   const [isPlaying, setIsPlaying] = React.useState(false);
+  const [currentTrackIndex, setCurrentTrackIndex] = React.useState(0);
   const [volume, setVolume] = React.useState(1);
   const togglePlay = React.useCallback(() => {
     const audioElement = audioRef.current;
@@ -32,7 +32,7 @@ const ButtonAction = React.memo((props: IButtonActionProps) => {
       setIsPlaying(!isPlaying);
     }
   }, [isPlaying]);
-
+  
   const handleVolumeChange = React.useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
       const newVolume = parseFloat(event.target.value);
@@ -43,28 +43,46 @@ const ButtonAction = React.memo((props: IButtonActionProps) => {
     },
     []
   );
-  const handleHover = () => {
-    console.log("hover");
+  const loadTrack = () => {
+    const audioElement = audioRef.current;
+    audioElement?.load(); 
+    audioElement?.play();
+    setIsPlaying(true)
+  }
+  const handlePrev = () => {
+    if (currentTrackIndex > 0) {
+      setCurrentTrackIndex(currentTrackIndex - 1);
+    } else {
+      setCurrentTrackIndex(audioArray.length - 1);
+    }
+    loadTrack()
+  };
+  const playNextTrack = () => {
+    if (currentTrackIndex < audioArray.length - 1) {
+      setCurrentTrackIndex(currentTrackIndex + 1);
+    } else {
+      setCurrentTrackIndex(0);
+    }
+    loadTrack()
   };
   return (
     <>
-      <AudioMusic audioRef={audioRef} />
+      <AudioMusic audioRef={audioRef} prev={currentTrackIndex} />
 
       <LayoutComp className="px-2">
-        <ButtonCustom className={"text-white px-2 hover:opacity-90 opacity-70 "}>
+        <ButtonCustom onClick={handlePrev} className={"text-white px-2 hover:opacity-90 opacity-70 "}>
           <BackBtn />
         </ButtonCustom>
         <ButtonCustom className={"text-white px-2 hover:opacity-90 opacity-70 "} onClick={togglePlay}>
           {!isPlaying ? <PauseBtn /> : <PlayBtn />}
         </ButtonCustom>
-        <ButtonCustom className={"text-white px-2 hover:opacity-90 opacity-70 "}>
+        <ButtonCustom onClick={playNextTrack} className={"text-white px-2 hover:opacity-90 opacity-70 "}>
           <NextBtn />
         </ButtonCustom>
       </LayoutComp>
       <LayoutComp className="px-2 hover:opacity-90 opacity-70 ">
         <InputRange handleVolumeChange={handleVolumeChange} volume={volume} />
       </LayoutComp>
-
       <LayoutComp className="px-2 hover:opacity-90 opacity-70 " >
         <ButtonCustom className={"text-white"}>
           <ListMusicBtn />
