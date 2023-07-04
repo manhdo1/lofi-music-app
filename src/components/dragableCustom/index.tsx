@@ -11,7 +11,7 @@ export default function DragCustom({children,defaultPosition,className}: IDragCu
   return (
     <>
       <Draggable defaultPosition={defaultPosition}>
-        <div className={`transparent-background rounded-lg  ${className} `}>
+        <div className={`cursor-move transparent-background rounded-lg  ${className} `}>
           <div className="content">
             {children}
           </div>

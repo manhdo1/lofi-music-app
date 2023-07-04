@@ -23,7 +23,7 @@ const DraggableTodo = (props: Props) => {
   return (
     <>
       <DragCustom defaultPosition={pos} className="w-96">
-        <h1 className="logoTodo font-extrabold border-b-2 text-center ">
+        <h1 className="logoTodo font-extrabold border-b-2 text-center select-none">
           <b>
             <span>T</span>o<span>do</span> <span>L</span>i<span>st</span>
           </b>

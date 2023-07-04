@@ -28,7 +28,7 @@ const Lock = () => {
   return (
     <>
       <DragCustom defaultPosition={pos}>
-        <div className="text-white logo">
+        <div className="text-white logo select-none " >
           {hours ? (
             <b>
               <span>{hours}</span>:<span>{minute} </span>
@@ -38,7 +38,7 @@ const Lock = () => {
             "Load..."
           )}
         </div>
-        <div className="text-white date text-4xl ">
+        <div className="text-white date text-4xl select-none">
           {day},{date} {months} {year}
         </div>
       </DragCustom>
