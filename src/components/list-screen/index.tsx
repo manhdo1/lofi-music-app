@@ -32,7 +32,7 @@ export default function ListScreen() {
         </ButtonCustom>
         <div
           id="dropdown"
-          className={`z-40 hidden absolute top-10 -left-2  bg-[#2d241d] divide-y divide-gray-100 rounded-lg shadow w-32 max-h-60 overflow-auto dark:bg-gray-700  group-hover:block  transition-all duration-300`}
+          className={`z-50 hidden absolute top-10 -left-2  bg-[#2d241d] divide-y divide-gray-100 rounded-lg shadow w-32 max-h-60 overflow-auto dark:bg-gray-700  group-hover:block  transition-all duration-300`}
         >
           <ul
             className="py-2 text-sm text-white "
