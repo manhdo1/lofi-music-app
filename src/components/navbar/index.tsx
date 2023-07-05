@@ -11,13 +11,13 @@ const Navbar = () => {
   const handleShow = React.useCallback(() => {
     setIsShow(!isShow);
   }, [isShow]);
-  const handleShowHide = (id:string) => {
+  const handleShowHide = (id: string) => {
     let getElementID = document.getElementById(id);
     if (getElementID?.classList.contains("hidden-todo")) {
       getElementID.classList.remove("hidden-todo");
     } else getElementID?.classList.add("hidden-todo");
   };
-  
+
   return (
     <>
       <nav className="bg-transparent ">
@@ -25,7 +25,13 @@ const Navbar = () => {
           <div className="relative flex h-24 items-center justify-between">
             <div className="flex flex-1 items-center justify-end ">
               <div className="flex space-x-4 items-center ">
-                {isShow ? <ButtonAction /> : null}
+                <div
+                  className={`flex space-x-4 items-center ${
+                    !isShow ? "opacity-0" : ""
+                  }`}
+                >
+                  <ButtonAction />
+                </div>
                 {/* Hide button */}
                 <LayoutComp
                   className={`px-2 hover:opacity-90 ${
@@ -44,7 +50,7 @@ const Navbar = () => {
                   <MyTooltip text="Show/hide TodoList">
                     <ButtonCustom
                       className={"text-white"}
-                      onClick={()=>handleShowHide('todo-showhide')}
+                      onClick={() => handleShowHide("todo-showhide")}
                     >
                       <TodoSVG />
                     </ButtonCustom>
@@ -59,7 +65,7 @@ const Navbar = () => {
                   <MyTooltip text="Show/hide Clock">
                     <ButtonCustom
                       className={"text-white"}
-                      onClick={() => handleShowHide('clock-showhide')}
+                      onClick={() => handleShowHide("clock-showhide")}
                     >
                       <ClockSVG />
                     </ButtonCustom>

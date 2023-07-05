@@ -9,12 +9,10 @@ import LoadPage from "./load-page";
 export default function HomePage() {
   const [isLoaded, setIsLoaded] = React.useState(true);
   React.useEffect(() => {
-    console.log("a");
     setTimeout(() => {
       setIsLoaded(false);
     }, 4000);
   }, []);
-
   return (
     <>
       {isLoaded ? (
@@ -33,6 +31,7 @@ export default function HomePage() {
           <div className="absolute">
             <DraggableTodo />
           </div>
+          
           <div className="absolute">
             <Lock />
           </div>

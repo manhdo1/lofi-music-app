@@ -19,3 +19,4 @@ export const listVideo = [
 
   }
 ]
+export const pos = { x: 1200, y: 200 };
