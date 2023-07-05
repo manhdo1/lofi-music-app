@@ -5,6 +5,25 @@ import { listVideo } from "@/constants/constant";
 import './styles.css'
 import { handleChange } from "./handler-green";
 export default function ListScreen() {
+  const [isOnline, setIsOnline] = React.useState(navigator.onLine);
+  React.useEffect(() => {
+    const handleOnline = () => {
+      setIsOnline(true);
+    };
+
+    const handleOffline = () => {
+      setIsOnline(false);
+    };
+
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
+
+    return () => {
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
+    };
+  }, []);
+
   return (
     <>
       <div className={`relative flex group `}>
@@ -23,7 +42,7 @@ export default function ListScreen() {
               return (
                 <li key={index}>
                   <ButtonCustom
-                    onClick={()=>handleChange(item)}
+                    onClick={()=>handleChange(item,isOnline)}
                     className={
                       "text-white font-semibold px-4 py-2 opacity-70 hover:opacity-100"
                     }
