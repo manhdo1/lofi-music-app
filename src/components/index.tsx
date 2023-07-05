@@ -18,8 +18,12 @@ export default function HomePage(props: IHomeProps) {
         src={"assets/videos/video1.mp4"}
       />
       <Navbar />
-      <Lock />
-      <DraggableTodo />
+        <div className="absolute">
+          <DraggableTodo />
+        </div>
+        <div className="absolute">
+          <Lock />
+        </div>
     </div>
   );
 }

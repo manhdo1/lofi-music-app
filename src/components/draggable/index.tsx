@@ -6,14 +6,14 @@ import MyTooltip from "../tooltip";
 import AddTodo from "./addTodo";
 import ListTodo from "./listTodo";
 import DragCustom from "../dragableCustom";
-type Props = {};
+
 interface Item {
   key: string;
   for: string;
   label: string;
   isCheck: boolean;
 }
-const DraggableTodo = (props: Props) => {
+const DraggableTodo = () => {
   const [valueInput, setvalueInput] = useState<Item[]>([]);
   const [isChecked, setIsChecked] = useState(false);
   const handleRemoveTodo = () => {
@@ -22,6 +22,7 @@ const DraggableTodo = (props: Props) => {
   const pos = { x: 150, y: 0 };
   return (
     <>
+    <div id="todo-showhide"> 
       <DragCustom defaultPosition={pos} className="w-96">
         <h1 className="logoTodo font-extrabold border-b-2 text-center select-none">
           <b>
@@ -50,6 +51,7 @@ const DraggableTodo = (props: Props) => {
           ) : null}
         </div>
       </DragCustom>
+      </div>
     </>
   );
 };

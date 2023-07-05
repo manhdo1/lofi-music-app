@@ -24,9 +24,10 @@ const Lock = () => {
     setMinute(formattedMinutes);
     setamPm(amPm);
   };
-  const pos = { x: 1200, y: 500 };
+  const pos = { x: 1200, y: 200 };
   return (
     <>
+    <div id="clock-showhide">
       <DragCustom defaultPosition={pos} className="w-fit">
         <div className="text-white logo select-none " >
           {hours ? (
@@ -42,6 +43,7 @@ const Lock = () => {
           {day},{date} {months} {year}
         </div>
       </DragCustom>
+      </div>
     </>
   );
 };
