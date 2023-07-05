@@ -24,10 +24,10 @@ const Lock = () => {
     setMinute(formattedMinutes);
     setamPm(amPm);
   };
-  const pos = { x: 1000, y: 0 };
+  const pos = { x: 1200, y: 500 };
   return (
     <>
-      <DragCustom defaultPosition={pos}>
+      <DragCustom defaultPosition={pos} className="w-fit">
         <div className="text-white logo select-none " >
           {hours ? (
             <b>

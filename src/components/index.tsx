@@ -10,19 +10,16 @@ export default function HomePage(props: IHomeProps) {
   return (
     <div className={style.videoContainer}>
       <video
+        id="screen-video"
         className={style.video}
         autoPlay
         muted
         loop
-        src={"assets/videos/video2.mp4"}
+        src={"assets/videos/video1.mp4"}
       />
       <Navbar />
-      <div className="relative">
-        <div className="absolute">
-          <Lock />
-        </div>
-        <DraggableTodo />
-      </div>
+      <Lock />
+      <DraggableTodo />
     </div>
   );
 }
