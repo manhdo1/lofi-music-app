@@ -40,10 +40,10 @@ const DraggableTodo = () => {
         <div className="action border-t-2 flex justify-between">
           <AddTodo valueInput={valueInput} setvalueInput={setvalueInput} />
           {valueInput.length !== 0 ? (
-            <MyTooltip text="Xóa">
+            <MyTooltip text="Xóa" className="my-4">
               <ButtonCustom
                 onClick={handleRemoveTodo}
-                className="px-2 m-1 hover:opacity-50 mt-2"
+                className="px-2 m-1 hover:opacity-50 mt-2 z-10"
               >
                 <Remove />
               </ButtonCustom>

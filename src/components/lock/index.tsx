@@ -11,12 +11,12 @@ const Lock = () => {
   const intervalRef = useRef<NodeJS.Timeout | undefined>(undefined);
   const getFormattedTime = useCallback(() => {
     const amPm = new Date().getHours() >= 12 ? "PM" : "AM";
-    const formattedHours = new Date().getHours() > 12 ? new Date().getHours() - 12 : hours;
+    const formattedHours = new Date().getHours() > 12 ? new Date().getHours() - 12 : new Date().getHours();
     const formattedMinutes = new Date().getMinutes().toString().padStart(2, "0");
     sethours(formattedHours);
     setMinute(formattedMinutes);
     setamPm(amPm);
-  },[hours]);
+  },[]);
   useEffect(() => {
      intervalRef.current = setInterval(() => {
       getFormattedTime();
@@ -32,7 +32,7 @@ const Lock = () => {
   const year = date.getFullYear();
   return (
     <>
-    <div id="clock-showhide">
+    <div id="clock-showhide" >
       <DragCustom defaultPosition={pos} className="w-fit">
         <div className="text-white logo select-none " >
           {hours ? (
