@@ -18,7 +18,7 @@ export default function HomePage() {
     }
   }
   React.useEffect(() => {
-    window.addEventListener("resize", handleResize)
+    handleResize()
     setTimeout(() => {
       setIsLoaded(false);
     }, 4000);
