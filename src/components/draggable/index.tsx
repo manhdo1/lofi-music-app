@@ -22,7 +22,7 @@ const DraggableTodo = () => {
   const pos = { x: 150, y: 0 };
   return (
     <>
-    <div id="todo-showhide"> 
+    <div id="todo-showhide" className="hidden-todo"> 
       <DragCustom defaultPosition={pos} className="w-96">
         <h1 className="logoTodo font-extrabold border-b-2 text-center select-none">
           <b>

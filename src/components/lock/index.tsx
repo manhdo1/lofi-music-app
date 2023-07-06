@@ -32,7 +32,7 @@ const Lock = () => {
   const year = date.getFullYear();
   return (
     <>
-    <div id="clock-showhide" >
+    <div id="clock-showhide" className="h-0">
       <DragCustom defaultPosition={pos} className="w-fit">
         <div className="text-white logo select-none " >
           {hours ? (
