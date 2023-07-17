@@ -1,15 +1,17 @@
-export const handleChange = (props:any,online:boolean) => {
-    if (!online) {
+
+export const handleChange = (item:any,isOnline:boolean) => {
+    if (!isOnline) {
       alert("Lỗi mạng mất kết nối")
       return
     } 
     let videoCurrent = document.getElementById('screen-video')
     let videoUrl = videoCurrent?.getAttribute('src')
     let fileName = videoUrl?.substring(videoUrl.lastIndexOf('/') + 1, videoUrl.lastIndexOf('.'));
-    if (fileName !== props.video) {
+    //kiểm tra video hiện tại và video muốn thay đổi
+    if (fileName !== item.video) {
       videoCurrent?.classList.add('hide');
       setTimeout(function() {
-        videoCurrent?.setAttribute('src',`assets/videos/${props.video}.mp4`)
+        videoCurrent?.setAttribute('src',`assets/videos/${item.video}.mp4`)
         videoCurrent?.classList.remove('hide');
       }, 500);
     }
