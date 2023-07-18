@@ -2,10 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import ButtonCustom from "../button-custom";
 import { FullScreen, SmallScreen } from "../icons-svg";
 import LayoutComp from "../layout-component";
-
-type Props = {};
-
-const FullSmallGreen = (props: Props) => {
+const FullSmallGreen = () => {
   const [isFullScreen, setIsFullScreen] = useState(false);
 
   const enterFullScreen = () => {
